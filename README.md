@@ -1,1 +1,2 @@
-# golang-gh-actions-example
+# github-actions-go-example
+Github Action in Golang
