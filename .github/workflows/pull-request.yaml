@@ -40,8 +40,8 @@ jobs:
     steps:
       - name: Check Branch Name Includes Ticket Number
         run: |
-          echo "branch name: ${GITHUB_REF#refs/heads/}"
-          if [[ "${GITHUB_REF#refs/heads/}" =~ ^(feature|bugfix|hotfix|release|revert)/CDE-[0-9]+[-/_].* ]]; then
+          echo "branch name: ${{ github.head_ref }}"
+          if [[ "${{ github.head_ref }}" =~ ^(feature|bugfix|hotfix|release|revert)/CDE-[0-9]+[-/_].* ]]; then
             echo "Branch name includes ticket";
           else
             echo "Branch name doesn't include ticket";
